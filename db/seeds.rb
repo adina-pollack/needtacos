@@ -12,20 +12,19 @@ neighborhood_data = get_neighborhood_data()
 
 
 restaurant_data.each_pair do |neighborhood_name, restaurants|
-  info = neighborhood_data[neighborhood_name]
   current_neighborhood = Neighborhood.create!({
-    name:         info[:name]
-    }),
+    name:     neighborhood_data[:name]
+    })
 
-    restaurants.each do |restaurant|
-
+    taco_data.each_pair do |restaurant_name, tacos|
+      info = restaurant_data[restaurant_name]
       current_restaurant = Restaurant.create!({
-        name:        restaurant[:name],
-        address:        restaurant[:address],
-        phone_number:  restaurant[:phone_number],
-        website:        restaurant[:website],
+        name:        info[:name],
+        address:        info[:address],
+        phone_number:  info[:phone_number],
+        website:        info[:website],
         neighborhood:   current_neighborhood
-        }),
+        })
 
         tacos.each do |taco|
           Taco.create!({
