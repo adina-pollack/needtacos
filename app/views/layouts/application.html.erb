@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>Help! Need tacos.</h1>
+    <nav>
+      <h2><%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %></h2>
+    </nav>
 
 <%= yield %>
 

@@ -1,0 +1,4 @@
+<h1><%= @neighborhood.name %></h1>
+<% @neighborhood.restaurants.each do |restaurant| %>
+  <h2><%= link_to restaurant.name, neighborhood_restaurant_path(@neighborhood, restaurant) %></h2>
+<% end %>
