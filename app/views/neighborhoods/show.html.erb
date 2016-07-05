@@ -2,3 +2,5 @@
 <% @neighborhood.restaurants.each do |restaurant| %>
   <h2><%= link_to restaurant.name, neighborhood_restaurant_path(@neighborhood, restaurant) %></h2>
 <% end %>
+
+<h2>Missing your fave taco joint? <%= link_to "Add it here!", new_neighborhood_restaurant_path(@neighborhood) %></h2>

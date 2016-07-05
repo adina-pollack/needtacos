@@ -5,9 +5,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Fjalla+One|Pacifico" rel="stylesheet">
 </head>
 <body>
-  <h1>Help! Need tacos.</h1>
+  <h1 class="title">Help! Need tacos.</h1>
+    <h2 class="city">Washington, DC</h2>
     <nav>
       <h2><%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %></h2>
     </nav>

@@ -6,22 +6,24 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
   def new
-    @restaurant = Restaurant.new
+    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @restaurant = @neighborhood.restaurants.new
   end
   def create
    @neighborhood = Neighborhood.find(params[:neighborhood_id])
-   @restaurant = @neighborhood.restaurants.create(restaurant_params)
-   redirect_to neighborhood_path(@neighborhood)
+   @restaurant = Restaurant.create!(restaurant_params.merge(neighborhood: @neighborhood))
+   redirect_to neighborhood_restaurant_path(@neighborhood, @restaurant)
   end
   def edit
+    @restaurant = Restaurant.find(params[:id])
     @neighborhood = Neighborhood.find(params[:neighborhood_id])
-    @restaurant = @neighborhood.restaurants.find(params[:id])
   end
   def update
+    @restaurant = Restaurant.find(params[:id])
     @neighborhood = Neighborhood.find(params[:neighborhood_id])
-    @restaurant = @Neighborhood.restaurants.find(params[:id])
-    @restaurant.update(restaurant_params)
-    redirect_to neighborhood_path(@neighborhood)
+
+    @restaurant.update(restaurant_params.merge(neighborhood: @neighborhood))
+    redirect_to neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)
   end
   def destroy
     @neighborhood = Neighborhood.find(params[:neighborhood_id])
