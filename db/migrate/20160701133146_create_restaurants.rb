@@ -6,6 +6,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :phone_number
       t.string :website
       t.references :neighborhood, index: true, foreign_key: true
+      t.integer :user_id
       t.timestamps null: false
     end
   end

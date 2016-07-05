@@ -10,9 +10,21 @@
 <body>
   <h1 class="title">Help! Need tacos.</h1>
     <h2 class="city">Washington, DC</h2>
+
     <nav>
+    <% if @current_user %>
+      <%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %>
+      <%= link_to "Sign Out", session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %>
+      <%= link_to "Sign In", new_session_path %>
+    <% end %>
       <h2><%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %></h2>
     </nav>
+
+  <% flash.each do |type, message| %>
+    <p class="<%= type %>"><%= message %></p>
+  <% end %>
 
 <%= yield %>
 
