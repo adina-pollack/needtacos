@@ -1,13 +1,89 @@
+body{
+  width: 1000px;
+  margin: 0 auto;
+}
 .title {
   font-family: 'Bungee Shade', cursive;
   font-size: 80px;
+  margin-bottom: 1px;
+  margin-top: 5px;
 }
-nav {
+
+.user {
+  margin-top: 18px;
+  margin-bottom: 5px;
+  text-align: right;
   font-family: 'Bungee', cursive;
+  font-size: 15px;
+  width: 100%;
+}
+
+li{
+  list-style-type: square;
+}
+
+h2{
+  font-family: 'Miriam Libre', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+h3{
+  font-family: 'Miriam Libre', sans-serif;
+  font-size: 25px;
+  padding-bottom: 4px;
+}
+
+h4{
+  font-family: 'Miriam Libre', sans-serif;
+  font-size: 20px;
+}
+a:link{
+  text-decoration: none;
+}
+
+#index {
+  font-family: 'Bungee', cursive;
+  font-size: 28px;
+  padding-bottom: 30px;
+}
+
+h2.city {
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+  margin-top: 0px;
+  padding-left: 700px;
+}
+a.fav {
+  text-decoration: none;
+  color: yellow;
+}
+
+a.no-fav {
+  text-decoration: none;
+  color: black;
+}
+
+li{
+  padding-left: 45px;
+}
+
+form{
+  font-family: 'Miriam Libre', sans-serif;
   font-size: 15px;
 }
 
-.city {
-  font-family: 'Pacifico', cursive;
-  font-size: 30px;
+form input{
+  width: 200px;
+}
+
+.neighborhood{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.smaller{
+  font-family: 'Miriam Libre', sans-serif;
+  font-size: 15px;
 }

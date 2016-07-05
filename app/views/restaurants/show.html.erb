@@ -4,12 +4,28 @@
 <p><%= @restaurant.phone_number %></p>
 <a><%= link_to @restaurant.website %></a>
 
-<h4><%= link_to "Edit", edit_neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant) %></h4>
-
+<h4><%= link_to("Edit", edit_neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)) if @current_user %></h4>
+<p><%= link_to('Delete Restaurant', neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }) if @current_user %></p>
 <h2>Tacos: <h2>
 <% @restaurant.tacos.each do |taco| %>
-<h3><%= taco.name %></h3>
-<p><%= taco.description %></p>
+  <li>
+    <h3><%= taco.name %></h3>
+    <% if @current_user %>
+      <% if taco.favorites.length > 0 %>
+        <%= link_to "&#9733;".html_safe, remove_favorite_taco_path(taco), method: :delete, class: "fav" %>
+      <% else %>
+        <%= link_to "&#9733;".html_safe, add_favorite_taco_path(taco), method: :post, class: "no-fav" %>
+      <% end %>
+    <% else %>
+    <% end %>
+    <%= link_to("(edit)", edit_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco)) if @current_user %></p>
+    <%= link_to("(delete)", neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco),
+            method: :delete,
+            data: { confirm: 'Are you sure?'} )if @current_user %></p>
+    <p><%= taco.description %></p>
+  </li>
 <% end %>
 
-<h3>Add a Taco:</h3>
+<h3><%= link_to("Add a Taco!", new_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, @taco)) if @current_user %> </h3>

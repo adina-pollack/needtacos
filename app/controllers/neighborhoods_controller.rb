@@ -6,21 +6,26 @@ class NeighborhoodsController < ApplicationController
     @neighborhood = Neighborhood.find(params[:id])
   end
   def new
+    redirect_to root_path unless @current_user
     @neighborhood = Neighborhood.new
   end
   def create
+    redirect_to root_path unless @current_user
     @neighborhood = Neighborhood.create!(neighborhood_params)
-      redirect_to @neighborhood
+    redirect_to @neighborhood
   end
   def edit
+    redirect_to root_path unless @current_user
     @neighborhood = Neighborhood.find(params[:id])
   end
   def update
+    redirect_to root_path unless @current_user
     @neighborhood = Neighborhood.find(params[:id])
-    @neighborhood.update(post_params)
-    redirect_to @neighborhood
+    @neighborhood.update(neighborhood_params)
+    redirect_to neighborhood_path(@neighborhood)
   end
   def destroy
+    redirect_to root_path unless @current_user
     @neighborhood = Neighborhood.find(params[:id])
     @neighborhood.destroy
     redirect_to neighborhoods_path

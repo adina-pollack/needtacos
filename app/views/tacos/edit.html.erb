@@ -1,4 +1,4 @@
-<%= form_for ([@neighborhood, @restaurant, @taco]) do |f| %>
+<%= form_for ([@restaurant.neighborhood, @restaurant, @taco]) do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>

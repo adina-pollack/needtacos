@@ -1,5 +1,15 @@
-<% @neighborhoods.each do |neighborhood| %>
-    <h2><%= link_to neighborhood.name, neighborhood_path(neighborhood)%></h2>
-<% end %>
+<h2>Where are you?</h2>
 
-<h2>Don't see your neighborhood? Help us out and <%= link_to "add a new 'hood!", new_neighborhood_path %></h2>
+
+<% @neighborhoods.each do |neighborhood| %>
+<li>
+    <h3><%= link_to neighborhood.name, neighborhood_path(neighborhood)%></h3>
+<% end %>
+</li>
+
+
+<% if @current_user %>
+<h3>Don't see your neighborhood? <%= link_to "Add a new 'hood!", new_neighborhood_path %></h3>
+<% else %>
+<h4>Don't see your neighborhood? Sign in at the top to add a new neighborhood!</h4>
+<% end %>
