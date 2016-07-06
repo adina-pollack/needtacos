@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$("#help").on("mouseover", function(){
+  $("body").css("background-image", "url(../images/giphy.gif)")
+});

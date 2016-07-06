@@ -1,3 +1,5 @@
+
+
 logancircle = Neighborhood.create(name: "Logan Circle")
 dupontcircle = Neighborhood.create(name: "Dupont Circle")
 pennquarter = Neighborhood.create(name: "Penn Quarter")
