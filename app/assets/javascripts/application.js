@@ -11,10 +11,20 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+
 //= require_tree .
 
-$("#help").on("mouseover", function(){
-  $("body").css("background-image", "url(../images/giphy.gif)")
+$(document).ready(function(){
+
+  $("#help").on("mouseover", function(){
+    $("body").css("background-image", "url(giphy.gif)").css("background-size", "cover")
+  });
+
+  $("#help").on("mouseout", function(){
+      $("body").css("background-image", "none")
+    });
 });
+
+//=require turbolinks

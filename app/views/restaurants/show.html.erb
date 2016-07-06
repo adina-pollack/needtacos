@@ -20,7 +20,7 @@
 <h3 id="taco">Tacos:</h3>
 <% @restaurant.tacos.each do |taco| %>
     <h4><%= taco.name %>
-    <% if @current_user %>
+      <% if @current_user %>
       <% if taco.favorites.length > 0 %>
         <%= link_to "&#9733;".html_safe, remove_favorite_taco_path(taco), method: :delete, class: "fav" %>
       <% else %>
@@ -30,7 +30,7 @@
     <% end %>
   </h4>
   <p class="description"><%= taco.description %></p>
-  <% if @current_user %>
+  <% if @current_user%>
     <p><%= link_to "Edit", edit_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco) %> | <%= link_to("Delete", neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco),
             method: :delete,
             data: { confirm: 'Are you sure?'} ) %></p>
