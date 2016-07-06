@@ -25,7 +25,7 @@
   </div>
 
   <nav id="index">
-    <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %>
+    <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %> | <%= link_to "Favorites", user_path(@current_user) %>
   </nav>
 
   <% flash.each do |type, message| %>

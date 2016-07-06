@@ -1,17 +1,15 @@
-<h1><%= @restaurant.name %></h1>
-<h2><%= @restaurant.neighborhood[:name] %></h2>
+<h2><%= @restaurant.name %></h2>
+<h3><%= @restaurant.neighborhood[:name] %></h3>
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
-<a><%= link_to @restaurant.website %></a>
+<p><%= link_to @restaurant.website %></p>
 
-<h4><%= link_to("Edit", edit_neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)) if @current_user %></h4>
-<p><%= link_to('Delete Restaurant', neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant),
+<p><%= link_to("Edit", edit_neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)) if @current_user %> | <%= link_to('Delete', neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant),
               method: :delete,
               data: { confirm: 'Are you sure?' }) if @current_user %></p>
-<h2>Tacos: <h2>
+<h3>Tacos: <h3>
 <% @restaurant.tacos.each do |taco| %>
-  <li>
-    <h3><%= taco.name %></h3>
+    <h4><%= taco.name %>
     <% if @current_user %>
       <% if taco.favorites.length > 0 %>
         <%= link_to "&#9733;".html_safe, remove_favorite_taco_path(taco), method: :delete, class: "fav" %>
@@ -20,12 +18,12 @@
       <% end %>
     <% else %>
     <% end %>
-    <%= link_to("(edit)", edit_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco)) if @current_user %></p>
-    <%= link_to("(delete)", neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco),
+  </h4>
+  <p><%= taco.description %></p>
+    <p><%= link_to("Edit", edit_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco)) if @current_user %> | <%= link_to("Delete", neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco),
             method: :delete,
             data: { confirm: 'Are you sure?'} )if @current_user %></p>
-    <p><%= taco.description %></p>
-  </li>
+
 <% end %>
 
 <h3><%= link_to("Add a Taco!", new_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, @taco)) if @current_user %> </h3>

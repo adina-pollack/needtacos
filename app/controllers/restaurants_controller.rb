@@ -41,7 +41,6 @@ class RestaurantsController < ApplicationController
     @neighborhood = @restaurant.neighborhood
     redirect_to @neighborhood
   end
-
   def remove_favorite
     @restaurant = Restaurant.find(params[:id])
     @favorite = Favorite.find_by(restaurant: @restaurant, user: @current_user)

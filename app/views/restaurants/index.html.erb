@@ -1,4 +1,13 @@
 <h2>Restaurants:</h2>
 <% @restaurants.each do |restaurant| %>
-    <h3><%= link_to restaurant.name, neighborhood_restaurant_path(restaurant.neighborhood, restaurant)%> | <%= restaurant.neighborhood[:name] %></h3>
+    <h3><%= link_to restaurant.name, neighborhood_restaurant_path(restaurant.neighborhood, restaurant)%> | <%= restaurant.neighborhood[:name] %>
+      <% if @current_user %>
+        <% if restaurant.favorites.length > 0 %>
+        <%= link_to "&#9733;".html_safe, remove_favorite_restaurant_path(restaurant), method: :delete, class: "fav" %>
+        <% else %>
+          <%= link_to "&#9733;".html_safe, add_favorite_restaurant_path(restaurant), method: :post, class: "no-fav" %>
+        <% end %>
+      <% else %>
+      <% end %>
+    </h3>
 <% end %>
