@@ -1,13 +1,13 @@
 <%= form_for ([@restaurant.neighborhood, @restaurant, @taco]) do |f| %>
   <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name%>
   </p>
   <p>
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "text" %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit :class=>"submit"%>
   </p>
 <% end %>

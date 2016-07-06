@@ -5,17 +5,17 @@
   </p>
   <p>
     <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    <%= f.text_area :address, :class => "text" %>
   </p>
   <p>
     <%= f.label :phone_number %><br>
-    <%= f.text_area :phone_number %>
+    <%= f.text_area :phone_number, :class => "text"  %>
   </p>
   <p>
     <%= f.label :website %><br>
-    <%= f.text_area :website %>
+    <%= f.text_area :website, :class => "text"  %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit :class=>"submit"%>
   </p>
 <% end %>

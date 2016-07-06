@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<div class="hero">
   <div class="user">
     <nav id="user">
       <% if @current_user %>
@@ -19,13 +20,17 @@
       <% end %>
     </nav>
   </div>
-  <div class="hero">
+
     <h1 class="title">Help! Need tacos.</h1>
     <h2 class="city">Washington, DC</h2>
   </div>
-
+<div id="body">
   <nav id="index">
+    <% if @current_user %>
     <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %> | <%= link_to "Favorites", user_path(@current_user) %>
+    <% else %>
+    <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %>
+    <% end %>
   </nav>
 
   <% flash.each do |type, message| %>
@@ -33,6 +38,6 @@
   <% end %>
 
   <%= yield %>
-
+</div>
 </body>
 </html>

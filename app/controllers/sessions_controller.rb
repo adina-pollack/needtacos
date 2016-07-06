@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     if User.exists?(username: input_username)
       @user = User.find_by(username: input_username)
       if @user.password === params[:user][:password]
-        flash[:notice] = "You're signed in!"
         session[:user_id] = @user.id
         cookies[:username] = {value: @user.username, expires: 1.minute.from_now}
         redirect_to root_path

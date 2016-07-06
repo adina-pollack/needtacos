@@ -1,13 +1,23 @@
-<h2><%= @restaurant.name %></h2>
-<h3><%= @restaurant.neighborhood[:name] %></h3>
+<div id="restaurant_info">
+<div class="header">
+<h2 class="neighborhood"><%= @restaurant.name %></h2>
+
+<h3 class="neighborhood"><%= link_to "#{@restaurant.neighborhood[:name]}", neighborhood_path(@restaurant.neighborhood) %></h3>
+</div>
+<div class="restaurant">
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
-<p><%= link_to @restaurant.website %></p>
+<p><%= link_to @restaurant.website, "#{@restaurant.website}" %></p>
 
-<p><%= link_to("Edit", edit_neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)) if @current_user %> | <%= link_to('Delete', neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant),
+<% if @current_user %>
+<p><%= link_to "Edit", edit_neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)%> | <%= link_to('Delete', neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant),
               method: :delete,
-              data: { confirm: 'Are you sure?' }) if @current_user %></p>
-<h3>Tacos: <h3>
+              data: { confirm: 'Are you sure?' })%></p>
+<% else %>
+<% end %>
+</div>
+
+<h3 id="taco">Tacos:</h3>
 <% @restaurant.tacos.each do |taco| %>
     <h4><%= taco.name %>
     <% if @current_user %>
@@ -19,11 +29,14 @@
     <% else %>
     <% end %>
   </h4>
-  <p><%= taco.description %></p>
-    <p><%= link_to("Edit", edit_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco)) if @current_user %> | <%= link_to("Delete", neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco),
+  <p class="description"><%= taco.description %></p>
+  <% if @current_user %>
+    <p><%= link_to "Edit", edit_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco) %> | <%= link_to("Delete", neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, taco),
             method: :delete,
-            data: { confirm: 'Are you sure?'} )if @current_user %></p>
-
+            data: { confirm: 'Are you sure?'} ) %></p>
+    <%else%>
+    <%end%>
 <% end %>
 
-<h3><%= link_to("Add a Taco!", new_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, @taco)) if @current_user %> </h3>
+<h3 id="newtaco"><%= link_to("Add a Taco!", new_neighborhood_restaurant_taco_path(@restaurant.neighborhood, @restaurant, @taco)) if @current_user %> </h3>
+</div>
