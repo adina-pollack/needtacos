@@ -20,10 +20,12 @@ $(document).ready(function(){
 
   $("#help").on("mouseover", function(){
     $("body").css("background-image", "url(giphy.gif)").css("background-size", "cover")
+    $("a").css("color", "#000080")
   });
 
   $("#help").on("mouseout", function(){
       $("body").css("background-image", "none")
+      $("a").css("color", "#551A8B")
     });
 });
 
