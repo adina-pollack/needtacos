@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'neighborhoods#index'
-  resources :neighborhoods do
+  resources :neighborhoods , except: [:destroy] do
     resources :restaurants, except: [:index] do
       resources :tacos
     end

@@ -3,16 +3,7 @@ body{
   margin: 0 auto;
 
 }
-/*
-#body{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
-  width: 70%;
 
-}*/
 .hero{
   background-image: url("taco_pattern.jpg");
   padding-bottom: 20px;

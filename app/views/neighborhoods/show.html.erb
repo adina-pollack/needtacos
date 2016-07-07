@@ -2,18 +2,20 @@
   <h2><%= @neighborhood.name %> <span class="smaller"><%= link_to("edit", edit_neighborhood_path(@neighborhood)) if @current_user %></span></h2>
 </div>
 <% @neighborhood.restaurants.each do |restaurant| %>
-  <li>
+
+<li>
   <h3><%= link_to restaurant.name, neighborhood_restaurant_path(@neighborhood, restaurant) %>
-  <% if @current_user %>
+    <% if @current_user %>
     <% if restaurant.favorites.length > 0 %>
     <%= link_to "&#9733;".html_safe, remove_favorite_restaurant_path(restaurant), method: :delete, class: "fav" %>
     <% else %>
-      <%= link_to "&#9733;".html_safe, add_favorite_restaurant_path(restaurant), method: :post, class: "no-fav" %>
+    <%= link_to "&#9733;".html_safe, add_favorite_restaurant_path(restaurant), method: :post, class: "no-fav" %>
     <% end %>
-  <% else %>
-  <% end %>
-</h3>
-  </li>
+    <% else %>
+    <% end %>
+  </h3>
+</li>
+
 <% end %>
 
 
@@ -22,4 +24,4 @@
 <h3>Missing your fave taco joint? <%= link_to "Add it here!", new_neighborhood_restaurant_path(@neighborhood) %> </h3>
 <% else %>
 <h3>Missing your fave taco joint? Sign in at the top to add a new one!<h3>
-<% end %>
+  <% end %>
