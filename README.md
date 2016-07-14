@@ -1,6 +1,6 @@
 # needtacos
 
-Explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
+<!-- NHO: short description of the app can go here  -->
 
 ## Technologies used
 - Rails, Ruby, JavaScript, HTML, CSS

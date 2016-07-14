@@ -10,32 +10,32 @@
 </head>
 <body>
 
+<!-- NHO: excellent job on the layout! -->
 <div class="hero">
   <div class="user">
     <nav id="user">
       <% if @current_user %>
-      <%= link_to "Hey, #{@current_user.username}!", user_path(@current_user) %> |
-      <%= link_to "Sign Out", session_path, method: :delete %>
+        <%= link_to "Hey, #{@current_user.username}!", user_path(@current_user) %> |
+        <%= link_to "Sign Out", session_path, method: :delete %>
       <% else %>
-      <%= link_to "Sign Up", new_user_path %> | <%= link_to "Sign In", new_session_path %>
+        <%= link_to "Sign Up", new_user_path %> | <%= link_to "Sign In", new_session_path %>
       <% end %>
     </nav>
   </div>
-
     <h1 class="title"><span id="help">Help!</span> Need tacos.</h1>
     <h2 class="city">Washington, DC</h2>
   </div>
 
   <nav id="index">
     <% if @current_user %>
-    <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %> | <%= link_to "Favorites", user_path(@current_user) %>
+      <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %> | <%= link_to "Favorites", user_path(@current_user) %>
     <% else %>
-    <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %>
+      <%= link_to "Neighborhoods", neighborhoods_path %> | <%= link_to "Restaurants", restaurants_path %>
     <% end %>
   </nav>
 
   <% flash.each do |type, message| %>
-  <p class="<%= type %>"><%= message %></p>
+    <p class="<%= type %>"><%= message %></p>
   <% end %>
 
   <%= yield %>

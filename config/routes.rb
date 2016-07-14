@@ -11,8 +11,10 @@ Rails.application.routes.draw do
       delete 'remove_favorite'
     end
   end
+  # NHO: what's the motivation to move this as a seperate route?
+  # This might cause some problems with multiple routes mapping to the same controller action
   resources :tacos do
-    member do
+    member do # NHO: can move these routes under the nested resource
       post 'add_favorite'
       delete 'remove_favorite'
     end

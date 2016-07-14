@@ -1,4 +1,6 @@
 class NeighborhoodsController < ApplicationController
+  # NHO: One line is repeated in this controller 4 times - great opportunity for a before action
+  # NHO: before_action :redirect_unauthenticated_user
   def index
     @neighborhoods = Neighborhood.all
   end

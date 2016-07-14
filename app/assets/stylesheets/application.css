@@ -1,3 +1,8 @@
+/* NHO: FYI, don't think it made a difference here, but would caution against
+  deleting the comments in the application.css and application.js files as they are special
+  and power the Rails Asset Pipeline
+*/
+/* NHO: loved the styles and overall design! */
 body{
   width: 1000px;
   margin: 0 auto;

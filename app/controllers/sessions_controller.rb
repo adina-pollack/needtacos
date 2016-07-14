@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  # NHO: great job rolling your own user Auth!
   def new
     @user = User.new
     @user.username = cookies[:username]

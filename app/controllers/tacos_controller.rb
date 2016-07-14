@@ -1,5 +1,7 @@
 class TacosController < ApplicationController
-  def index
+  # NHO: What lines are duplicated in a lot of these actions?
+  # Could DRY up this controller with a before_action to do a common action such as find a restaurant, etc.
+  def index # NHO: don't think this action is being used
     @tacos = Taco.all
   end
   def show
@@ -32,26 +34,24 @@ class TacosController < ApplicationController
   end
   def destroy
     redirect_to root_path unless @current_user
-    @neighborhood = Neighborhood.find(params[:neighborhood_id])
+    @neighborhood = Neighborhood.find(params[:neighborhood_id]) # NHO: Don't think we need to find this / really only the restaurant
     @restaurant = @neighborhood.restaurants.find(params[:restaurant_id])
     @taco = @restaurant.tacos.find(params[:id])
     @taco.destroy
     redirect_to neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)
   end
+
+  # NHO: we can DRY up these methods by using Active Record helpers to find the objects we need
   def add_favorite
     @taco = Taco.find(params[:id])
     @favorite = Favorite.create(taco: @taco, user: @current_user)
-    @restaurant = @taco.restaurant
-    @neighborhood = @restaurant.neighborhood
-    redirect_to neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)
+    redirect_to neighborhood_restaurant_path(@taco.restaurant.neighborhood, @taco.restaurant)
   end
   def remove_favorite
     @taco = Taco.find(params[:id])
     @favorite = Favorite.find_by(taco: @taco, user: @current_user)
     @favorite.destroy
-    @restaurant = @taco.restaurant
-    @neighborhood = @restaurant.neighborhood
-    redirect_to neighborhood_restaurant_path(@restaurant.neighborhood, @restaurant)
+    redirect_to neighborhood_restaurant_path(@taco.restaurant.neighborhood, @taco.restaurant)
   end
   private
   def taco_params
