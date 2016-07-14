@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  # NHO: Opportunity to DRY up controller using before_actions like find_neighborhood and redirect_unauth_user
+  # NHO: also a good habit to get into is to try and limit the number of instance vars per action like Sandy Metz recommends
   def index
     @restaurants = Restaurant.all
   end
@@ -35,6 +37,7 @@ class RestaurantsController < ApplicationController
     @restaurant.destroy
     redirect_to @neighborhood
   end
+  # NHO: feeling the need for a favorite controller to maybe DRY up the repetitive code here and in tacos favoriting
   def add_favorite
     @restaurant = Restaurant.find(params[:id])
     @favorite = Favorite.create(restaurant: @restaurant, user: @current_user)

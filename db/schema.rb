@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160705165111) do
     t.string   "name",          null: false
     t.string   "description"
     t.integer  "restaurant_id"
-    t.integer  "user_id"
+    t.integer  "user_id" # NHO: don't think you want this foreign key here since its a many to many relationship
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

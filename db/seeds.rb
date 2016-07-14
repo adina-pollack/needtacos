@@ -1,4 +1,6 @@
 
+# NHO: great seeds!
+# NHO: one good idea might be to destroy all existing tacos / restaurants / neighborhoods before seeding
 
 logancircle = Neighborhood.create(name: "Logan Circle")
 dupontcircle = Neighborhood.create(name: "Dupont Circle")

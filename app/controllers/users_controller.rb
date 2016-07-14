@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
   end
-
+  # NHO: Would recommend looking into CanCanCan for User authorization
   def edit
     @user = User.find(params[:id])
     redirect_to root_path unless @current_user == @user

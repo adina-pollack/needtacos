@@ -16,6 +16,7 @@
 
 //= require_tree .
 
+// NHO: this is awesome!
 $(document).ready(function(){
 
   $("#help").on("mouseover", function(){
@@ -29,4 +30,5 @@ $(document).ready(function(){
     });
 });
 
+// NHO: out of curiousity was this a work around? if so could be a great opportunity for a code comment!
 //=require turbolinks
