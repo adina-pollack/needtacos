@@ -6,7 +6,7 @@
 <li>
   <h3><%= link_to restaurant.name, neighborhood_restaurant_path(@neighborhood, restaurant) %>
     <% if @current_user %>
-    <% if restaurant.favorites.length > 0 %>
+    <% if restaurant.favorites.find_by(user: @current_user)%>
     <%= link_to "&#9733;".html_safe, remove_favorite_restaurant_path(restaurant), method: :delete, class: "fav" %>
     <% else %>
     <%= link_to "&#9733;".html_safe, add_favorite_restaurant_path(restaurant), method: :post, class: "no-fav" %>
