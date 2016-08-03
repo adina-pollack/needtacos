@@ -1,4 +1,6 @@
-
+Neighborhood.destroy_all
+Restaurant.destroy_all
+Taco.destroy_all
 
 logancircle = Neighborhood.create(name: "Logan Circle")
 dupontcircle = Neighborhood.create(name: "Dupont Circle")
