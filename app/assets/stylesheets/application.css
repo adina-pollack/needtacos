@@ -1,7 +1,8 @@
 body{
   width: 1000px;
   margin: 0 auto;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .hero{
@@ -9,9 +10,10 @@ body{
   padding-bottom: 20px;
   padding-top: 10px;
   padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-
 .title {
   font-family: 'Bungee Shade', cursive;
   font-size: 80px;
@@ -33,6 +35,7 @@ p{
 }
 li{
   list-style-type: square;
+  padding-left: 45px;
 }
 
 h2{
@@ -70,9 +73,19 @@ a:link{
   font-size: 28px;
   padding-bottom: 30px;
   padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
 }
-
-h2.city {
+#index li{
+  list-style-type: none;
+  flex-grow: 1;
+  padding-left: 0px;
+}
+/*#index li:first-child{
+  padding-left: 0px;
+}*/
+.city {
   font-family: 'Pacifico', cursive;
   font-size: 25px;
   margin-top: 0px;
@@ -89,9 +102,7 @@ a.no-fav {
   color: black;
 }
 
-li{
-  padding-left: 45px;
-}
+
 
 form{
   font-family: 'Miriam Libre', sans-serif;
@@ -141,4 +152,92 @@ padding-top: 10px;
 
 a {
   color: #551A8B;
+}
+@-ms-viewport{
+  width: device-width;
+}
+@media screen and (max-width: 620px){
+  body{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 375;
+  }
+  .title{
+    font-size: 60px;
+    order: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .city{
+    font-size: 20px;
+    padding-left: 150px;
+    order: 2;
+  }
+  .hero{
+    width: 375px;
+    display: flex;
+    flex-direction: column;;
+    background: stretch;
+    align-content: center;
+    padding-top: 0px;
+  }
+  .user{
+    order: 3;
+    font-size: 16px;
+  }
+  #index{
+    width: 375px;
+    display: flex;
+    font-size: 14px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+  #index li{
+    padding-left: 0px;
+
+  }
+  h2{
+    font-size: 24px;
+  }
+  h4{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    width: 375px;
+  }
+  h3{
+    width: 375px;
+    font-size: 20px;
+  }
+  form{
+    width: 375px;
+  }
+  #restaurantInfo{
+    display: flex;
+    flex-direction: column;
+  }
+  .restaurantIndex{
+    font-size: 17px;
+  }
+  .restaurant{
+    float: left;
+    width: 100%;
+  }
+  .restaurant p{
+    margin: 2px;
+  }
+  .header{
+    width: 100%;
+  }
+  #taco{
+    padding: 0px;
+    font-size: 20px;
+    margin: 0px;
+    width: 375px;
+  }
+  .description{
+    width: 375px;
+  }
 }

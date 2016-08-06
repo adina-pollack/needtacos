@@ -2,7 +2,6 @@
   <h2><%= @neighborhood.name %> <span class="smaller"><%= link_to("edit", edit_neighborhood_path(@neighborhood)) if @current_user %></span></h2>
 </div>
 <% @neighborhood.restaurants.each do |restaurant| %>
-
 <li>
   <h3><%= link_to restaurant.name, neighborhood_restaurant_path(@neighborhood, restaurant) %>
     <% if @current_user %>

@@ -27,6 +27,8 @@ $(document).ready(function(){
       $("body").css("background-image", "none")
       $("a").css("color", "#551A8B")
     });
-});
 
+
+
+});
 //=require turbolinks
