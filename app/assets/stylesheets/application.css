@@ -144,16 +144,13 @@ width:40%;
 overflow:hidden;
 padding-top: 10px;
 }
-
 #taco{
   margin-top: 0px;
   margin-bottom: 10px;
 }
-
 a {
   color: #551A8B;
 }
-
 @media screen and (max-width: 620px){
   main{
     display: flex;
@@ -246,7 +243,7 @@ a {
     max-width: 350px;
   }
 }
-@media screen and (max-width: 750px){
+/*@media screen and (max-width: 750px){
   main{
     display: flex;
     flex-direction: column;
@@ -263,7 +260,7 @@ a {
     order: 2;
   }
   .hero{
-    max-width: 700px;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     background: stretch;
@@ -337,4 +334,4 @@ a {
     font-size: 18px;
     max-width: 700px;
   }
-}
+}*/
