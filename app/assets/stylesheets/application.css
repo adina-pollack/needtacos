@@ -162,7 +162,6 @@ a {
     flex-direction: column;
     padding-left: 15px;
     padding-right: 15px;
-    width: 375;
   }
   .title{
     font-size: 60px;
@@ -176,7 +175,7 @@ a {
     order: 2;
   }
   .hero{
-    width: 375px;
+    max-width: 375px;
     display: flex;
     flex-direction: column;;
     background: stretch;
@@ -188,7 +187,7 @@ a {
     font-size: 16px;
   }
   #index{
-    width: 375px;
+    max-width: 375px;
     display: flex;
     font-size: 14px;
     padding-bottom: 0px;
@@ -205,14 +204,14 @@ a {
     font-size: 18px;
     display: flex;
     flex-direction: row;
-    width: 375px;
+    max-width: 375px;
   }
   h3{
-    width: 375px;
+    max-width: 375px;
     font-size: 20px;
   }
   form{
-    width: 375px;
+    max-width: 375px;
   }
   #restaurantInfo{
     display: flex;
@@ -235,9 +234,9 @@ a {
     padding: 0px;
     font-size: 20px;
     margin: 0px;
-    width: 375px;
+    max-width: 375px;
   }
   .description{
-    width: 375px;
+    max-width: 375px;
   }
 }
