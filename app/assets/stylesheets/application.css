@@ -153,15 +153,11 @@ padding-top: 10px;
 a {
   color: #551A8B;
 }
-@-ms-viewport{
-  width: device-width;
-}
-@media screen and (max-width: 620px){
-  body{
+
+@media screen and (max-width: 750px){
+  main{
     display: flex;
     flex-direction: column;
-    padding-left: 15px;
-    padding-right: 15px;
   }
   .title{
     font-size: 60px;
@@ -175,7 +171,7 @@ a {
     order: 2;
   }
   .hero{
-    max-width: 350px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;;
     background: stretch;
@@ -184,34 +180,39 @@ a {
   }
   .user{
     order: 3;
-    font-size: 16px;
+    font-size: 14px;
+  }
+  #user{
+    padding-right: 50px;
   }
   #index{
     max-width: 350px;
     display: flex;
-    font-size: 14px;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    font-size: 13.5px;
+    padding: 0px 5px 0px 5px;
   }
   #index li{
     padding-left: 0px;
-
   }
   h2{
     font-size: 24px;
+    padding: 0px 5px 0px 5px;
   }
   h4{
     font-size: 18px;
     display: flex;
     flex-direction: row;
     max-width: 350px;
+    padding: 0px 5px 0px 5px;
   }
   h3{
     max-width: 350px;
     font-size: 20px;
+    padding: 0px 5px 0px 5px;
   }
   form{
     max-width: 350px;
+    padding: 0px 5px 0px 5px;
   }
   #restaurantInfo{
     display: flex;
@@ -225,18 +226,47 @@ a {
     width: 100%;
   }
   .restaurant p{
-    margin: 2px;
+      margin: 1px 0px 1px 0px;
+  }
+  p{
+    max-width: 350px;
+    padding: 0px 5px 0px 5px;
   }
   .header{
     width: 100%;
   }
   #taco{
-    padding: 0px;
     font-size: 20px;
     margin: 0px;
     max-width: 350px;
+    padding: 0px 5px 0px 5px;
   }
   .description{
+    font-size: 14px;
     max-width: 350px;
   }
+}
+/*@media screen and (max-width: 750px){
+  main{
+    display: flex;
+  }
+  .hero{
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;;
+    background: stretch;
+    align-content: center;
+    padding-top: 0px;
+    padding-bottom: 5px;
+  }
+  .title{
+    font-size: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .city{
+    font-size: 20px;
+    padding-left: 150px;
+
+  }*/
 }
