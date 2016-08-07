@@ -154,7 +154,7 @@ a {
   color: #551A8B;
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 620px){
   main{
     display: flex;
     flex-direction: column;
@@ -244,5 +244,98 @@ a {
   .description{
     font-size: 14px;
     max-width: 350px;
+  }
+}
+@media screen and (max-width: 750px){
+  main{
+    display: flex;
+    flex-direction: column;
+  }
+  .title{
+    font-size: 50px;
+    order: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .city{
+    font-size: 20px;
+    padding-left: 150px;
+    order: 2;
+  }
+  .hero{
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;;
+    background: stretch;
+    align-content: center;
+    padding-top: 0px;
+  }
+  .user{
+    order: 3;
+    font-size: 14px;
+  }
+  #user{
+    padding-right: 50px;
+  }
+}
+  #index{
+    max-width: 700px;
+    display: flex;
+    font-size: 18px;
+    padding: 0px 10px 0px 10px;
+  }
+  #index li{
+    padding-left: 0px;
+  }
+  h2{
+    font-size: 24px;
+    padding: 0px 5px 0px 5px;
+  }
+  h4{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    max-width: 350px;
+    padding: 0px 5px 0px 5px;
+  }
+  h3{
+    max-width: 700px;
+    font-size: 20px;
+    padding: 0px 5px 0px 5px;
+  }
+  form{
+    max-width: 400px;
+    padding: 0px 5px 0px 5px;
+  }
+  #restaurantInfo{
+    display: flex;
+    flex-direction: column;
+  }
+  .restaurantIndex{
+    font-size: 22px;
+  }
+  .restaurant{
+    float: left;
+    width: 100%;
+  }
+  .restaurant p{
+      margin: 1px 0px 1px 0px;
+  }
+  p{
+    max-width: 700px;
+    padding: 0px 10px 0px 10px;
+  }
+  .header{
+    width: 100%;
+  }
+  #taco{
+    font-size: 24px;
+    margin: 0px;
+    max-width: 700px;
+    padding: 0px 10px 0px 10px;
+  }
+  .description{
+    font-size: 18px;
+    max-width: 700px;
   }
 }
